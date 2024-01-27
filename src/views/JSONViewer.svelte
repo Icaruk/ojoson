@@ -1,5 +1,5 @@
 <script>
-	import ParentNode from "./partials/ParentNode.svelte";
+	import ObjectNode from "./partials/ObjectNode.svelte";
 
 	export let json = {};
 </script>
@@ -12,10 +12,12 @@
 
 	<div class="parsed">
 		<h1>Parsed</h1>
-		<ParentNode
+		{"{"}
+		<ObjectNode
 			value={json}
-			depth={-1}
+			depth={0}
 		/>
+		{"}"}
 		<div class="background">
 			<div class="vline" />
 			<div class="vline" />
@@ -53,6 +55,6 @@
 	.vline {
 		width: 1px;
 		height: 100%;
-		background-color: rgba(255, 0, 0, 0.1);
+		background-color: rgba(134, 134, 134, 0.1);
 	}
 </style>

@@ -3,18 +3,14 @@
 
 	export let key = "";
 	export let value = false;
-	export let showKey = true;
 	export let depth = 0;
 </script>
 
 <div>
-	<BaseNode {depth}>
-		<span slot="key">
-			{#if showKey}
-				{key}
-			{/if}
-		</span>
-
+	<BaseNode
+		{depth}
+		{key}
+	>
 		<span
 			slot="value"
 			class="red">{value}</span

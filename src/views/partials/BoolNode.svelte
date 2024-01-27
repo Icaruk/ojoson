@@ -16,13 +16,10 @@
 	}
 </script>
 
-<BaseNode {depth}>
-	<span slot="key">
-		{#if showKey}
-			{key}
-		{/if}
-	</span>
-
+<BaseNode
+	{depth}
+	{key}
+>
 	<span
 		slot="value"
 		class={valueClass}>{value}</span

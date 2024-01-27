@@ -1,4 +1,5 @@
 <script>
+	export let key = "";
 	export let depth = 0;
 
 	let styles = {
@@ -11,13 +12,11 @@
 </script>
 
 <div style={cssVarStyles}>
-	<div class="key">
-		<slot />
-	</div>
+	<pre class="key">"{key}":</pre>
 </div>
 
 <style>
 	.key {
-		padding: 0.2rem 0.25rem;
+		display: flex;
 	}
 </style>
