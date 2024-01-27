@@ -1,4 +1,5 @@
 <script>
+	import BraceWrapper from "../components/BraceWrapper.svelte";
 	import ObjectNode from "./partials/ObjectNode.svelte";
 
 	export let json = {};
@@ -12,11 +13,15 @@
 
 	<div class="parsed">
 		<h1>Parsed</h1>
-
-		<ObjectNode
-			value={json}
+		<BraceWrapper
 			depth={0}
-		/>
+			opening={"{"}
+		>
+			<ObjectNode
+				value={json}
+				depth={0}
+			/>
+		</BraceWrapper>
 
 		<div class="background">
 			<div class="vline" />

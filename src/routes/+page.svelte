@@ -6,7 +6,8 @@
 		num: 123,
 		hasError: false,
 		isCorrect: true,
-		arr: ["aaa", 111, true, ["bbb", 222, false]],
+		simpleArr: ["a", "b", 1, 2],
+		arr2d: ["aaa", 111, true, ["bbb", 222, false]],
 		objData: {
 			age: 33,
 			name: "Pepe",
@@ -30,3 +31,10 @@
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 <JsonViewer json={jsonData} />
+
+<style>
+	:global(pre) {
+		margin: 0;
+		font-size: 12px;
+	}
+</style>

@@ -12,7 +12,8 @@
 	/>
 
 	<pre class="value">
-		<slot name="value" />,
+		<slot name="value" />
+		<span>,</span>
 	</pre>
 </div>
 
@@ -20,7 +21,6 @@
 	.row {
 		display: flex;
 		align-items: center;
-		height: 1.5rem;
 		line-height: 0px;
 		gap: 0.5rem;
 	}
@@ -29,6 +29,7 @@
 		align-items: center;
 		cursor: pointer;
 		height: 1rem;
+		width: min-content;
 	}
 	.value:hover {
 		background: rgba(41, 41, 253, 0.116);

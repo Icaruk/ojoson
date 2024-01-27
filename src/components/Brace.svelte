@@ -1,8 +1,13 @@
 <script>
 	import { getIdentationFromDepth } from "../utils/getIdentationFromDepth";
 
-	export let key = "";
+	export let brace = "";
 	export let depth = 0;
+	export let trailingComma = false;
+
+	if (trailingComma) {
+		brace = `${brace},`;
+	}
 
 	let styles = {
 		"padding-left": getIdentationFromDepth(depth),
@@ -14,7 +19,7 @@
 </script>
 
 <div style={cssVarStyles}>
-	<pre class="key">"{key}":</pre>
+	<pre class="key">{brace}</pre>
 </div>
 
 <style>
