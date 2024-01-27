@@ -1,5 +1,6 @@
 <script>
 	import BraceWrapper from "../components/BraceWrapper.svelte";
+	import Search from "../components/Search.svelte";
 	import ObjectNode from "./partials/ObjectNode.svelte";
 
 	export let json = {};
@@ -13,6 +14,9 @@
 
 	<div class="parsed">
 		<h1>Parsed</h1>
+
+		<Search />
+
 		<BraceWrapper
 			depth={0}
 			opening={"{"}
@@ -44,7 +48,10 @@
 		gap: 10rem;
 	}
 	.parsed {
+		display: flex;
+		flex-direction: column;
 		position: relative;
+		gap: 1rem;
 	}
 	.background {
 		position: absolute;
