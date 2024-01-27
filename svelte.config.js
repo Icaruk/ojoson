@@ -1,11 +1,12 @@
 import adapter from "@sveltejs/adapter-static";
 
+const dev = process.argv.includes("dev");
+
 /** @type {import('@sveltejs/kit').Config} */
 export default {
 	kit: {
+		appDir: "app",
 		adapter: adapter({
-			// default options are shown. On some platforms
-			// these options are set automatically — see below
 			pages: "build",
 			assets: "build",
 			fallback: "404.html",
@@ -13,7 +14,7 @@ export default {
 			strict: true,
 		}),
 		paths: {
-			base: process.argv.includes("dev") ? "" : process.env.BASE_PATH,
+			base: process.env.NODE_ENV === "production" ? "/ojoson" : "",
 		},
 	},
 };
