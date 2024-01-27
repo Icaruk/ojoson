@@ -1,24 +1,19 @@
 <script>
 	import BaseNode from "../../components/BaseNode.svelte";
-	import NodeWrapper from "../../components/NodeWrapper.svelte";
 
 	export let key = "";
 	export let value = false;
-	export let showKey = true;
 	export let depth = 0;
+	/** @type {Array<string>} */
+	export let path = [];
 
-	let valueClass = "green";
-
-	$: if (value) {
-		valueClass = "green";
-	} else {
-		valueClass = "red";
-	}
+	let valueClass = "color";
 </script>
 
 <BaseNode
 	{depth}
 	{key}
+	{path}
 >
 	<span
 		slot="value"
@@ -29,11 +24,7 @@
 </BaseNode>
 
 <style>
-	.green {
-		color: green;
-	}
-
-	.red {
-		color: red;
+	.color {
+		color: rgb(17, 69, 117);
 	}
 </style>

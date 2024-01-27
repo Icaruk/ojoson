@@ -3,12 +3,15 @@
 
 	export let depth = 0;
 	export let key = "";
+	/** @type {Array<string>} */
+	export let path = [];
 </script>
 
 <div class="row">
 	<Key
 		{depth}
 		{key}
+		{path}
 	/>
 
 	<pre class="value">
@@ -27,7 +30,6 @@
 	.value {
 		display: flex;
 		align-items: center;
-		cursor: pointer;
 		height: 1rem;
 		width: min-content;
 	}

@@ -1,16 +1,17 @@
 <script>
+	import Brace from "../../components/Brace.svelte";
 	import Key from "../../components/Key.svelte";
 	import { getValueType } from "../../utils/getValueType";
 	import BoolNode from "./BoolNode.svelte";
 	import NumberNode from "./NumberNode.svelte";
 	import StringNode from "./StringNode.svelte";
-	import BraceWrapper from "../../components/BraceWrapper.svelte";
-	import Brace from "../../components/Brace.svelte";
 
 	export let key = "";
 	/** @type {{ [key: string]: any | Array<any> }} */
 	export let value = {};
 	export let depth = 0;
+	/** @type {Array<string>} */
+	export let path = [];
 
 	const valueType = getValueType(value);
 	let openingBrace = "";
@@ -46,9 +47,10 @@
 		<Key
 			{depth}
 			{key}
+			{path}
 		/>
 		<Brace
-			{depth}
+			depth={0.1}
 			brace={openingBrace}
 		/>
 	</div>
@@ -56,19 +58,23 @@
 
 {#each Object.keys(value) as _key}
 	{@const _type = getValueType(value[_key])}
+	{@const _depth = depth + 1}
+	{@const _path = [...path, _key]}
 
 	{#if ["object", "array"].includes(_type)}
 		<svelte:self
 			key={_key}
 			value={value[_key]}
-			depth={depth + 1}
+			depth={_depth}
+			path={_path}
 		/>
 	{:else}
 		<svelte:component
 			this={components[_type]}
 			key={_key}
 			value={value[_key]}
-			depth={depth + 1}
+			depth={_depth}
+			path={_path}
 		/>
 	{/if}
 {/each}

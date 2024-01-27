@@ -4,12 +4,15 @@
 	export let key = "";
 	export let value = false;
 	export let depth = 0;
+	/** @type {Array<string>} */
+	export let path = [];
 </script>
 
 <div>
 	<BaseNode
 		{depth}
 		{key}
+		{path}
 	>
 		<span
 			slot="value"
@@ -21,6 +24,6 @@
 
 <style>
 	.red {
-		color: rgb(201, 1, 204);
+		color: rgb(58, 139, 33);
 	}
 </style>

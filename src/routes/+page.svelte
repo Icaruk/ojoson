@@ -1,5 +1,4 @@
 <script>
-	import { setContext } from "svelte";
 	import JsonViewer from "../views/JSONViewer.svelte";
 
 	const jsonData = {
@@ -24,17 +23,16 @@
 				value: "ES1045838745737",
 				hasError: false,
 			},
+			{
+				very: {
+					deep: {
+						field: "dark",
+					},
+				},
+			},
 		],
 	};
-
-	const app = {
-		path: ["a", "b"],
-	};
-	setContext("app", app);
 </script>
-
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 <JsonViewer json={jsonData} />
 
