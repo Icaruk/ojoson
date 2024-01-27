@@ -1,4 +1,5 @@
 <script>
+	import Key from "../../components/Key.svelte";
 	import { getValueType } from "../../utils/getValueType";
 	import BoolNode from "./BoolNode.svelte";
 	import NumberNode from "./NumberNode.svelte";
@@ -8,7 +9,8 @@
 	/** @type {{ [key: string]: any | Array<any> }} */
 	export let value = {};
 	export let depth = 0;
-	export let showBrackets = true;
+
+	$: valueType = getValueType(value);
 
 	/**
 	 * @type {{ [key: string]: any }}
@@ -21,18 +23,25 @@
 	};
 </script>
 
+{#if ["array", "object"].includes(valueType) && depth > 0}
+	<Key
+		{depth}
+		{key}
+	/>
+{/if}
+
 {#each Object.keys(value) as _key}
 	{@const type = getValueType(value[_key])}
 
 	{#if type === "object"}
 		<svelte:self
-			{_key}
+			key={_key}
 			value={value[_key]}
 			depth={depth + 1}
 		/>
 	{:else if type === "array"}
 		<svelte:self
-			{_key}
+			key={_key}
 			value={value[_key]}
 			depth={depth + 1}
 		/>

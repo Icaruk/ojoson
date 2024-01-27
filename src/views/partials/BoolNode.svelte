@@ -22,8 +22,10 @@
 >
 	<span
 		slot="value"
-		class={valueClass}>{value}</span
+		class={valueClass}
 	>
+		{value}
+	</span>
 </BaseNode>
 
 <style>

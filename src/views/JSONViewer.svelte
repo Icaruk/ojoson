@@ -12,12 +12,12 @@
 
 	<div class="parsed">
 		<h1>Parsed</h1>
-		{"{"}
+
 		<ObjectNode
 			value={json}
 			depth={0}
 		/>
-		{"}"}
+
 		<div class="background">
 			<div class="vline" />
 			<div class="vline" />

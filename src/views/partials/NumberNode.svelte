@@ -13,8 +13,9 @@
 	>
 		<span
 			slot="value"
-			class="red">{value}</span
-		>
+			class="red"
+			>{value}
+		</span>
 	</BaseNode>
 </div>
 
