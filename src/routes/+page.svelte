@@ -35,10 +35,3 @@
 </script>
 
 <JsonViewer json={jsonData} />
-
-<style>
-	:global(pre) {
-		margin: 0;
-		font-size: 12px;
-	}
-</style>
