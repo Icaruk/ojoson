@@ -31,7 +31,7 @@
 					jsonInputValue = ev.target?.value || "{}";
 				}
 			}}
-		/>
+		></textarea>
 		<button
 			class="button-reset"
 			on:click={() => {
@@ -64,7 +64,7 @@
 
 				<div class="background">
 					{#each Array(maxDepth) as _, i}
-						<div class="vline" />
+						<div class="vline"></div>
 					{/each}
 				</div>
 			</div>
